@@ -1,0 +1,15 @@
+import requests
+
+def get_fear_and_greed_index():
+    url = "https://api.coinfear.com/api/v1/index"
+    response = requests.get(url)
+    data = response.json()
+    fear_and_greed_index = data["value"]
+    return fear_and_greed_index
+
+def main():
+    fear_and_greed_index = get_fear_and_greed_index()
+    print(f"Индекс страха и жадности: {fear_and_greed_index}")
+
+if name == "main":
+    main()
